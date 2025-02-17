@@ -368,7 +368,8 @@ function updateCartSummary() {
 
 function goToCart() {
     sessionStorage.setItem("cartData", JSON.stringify(Array.from(cart.entries())));
-    window.location.href = "confirmation/cart.html"; // Redirect to cart page
+    window.location.href = "confirmation/cart.html";
+
 }
 
 function toggleMedicineInCart(medicine, card) {
@@ -401,11 +402,11 @@ function updateQuantity(medicine, change, card) {
         card.classList.add('selected');
     }
 
-    // Update the quantity inside the card
+    
     const quantitySpan = card.querySelector('.quantity');
     quantitySpan.textContent = cart.get(medicine) || 0;
 
-    // Show or hide the "-" button based on quantity
+   
     const minusButton = card.querySelector('.minus');
     minusButton.style.display = cart.get(medicine) > 0 ? 'inline-block' : 'none';
 
@@ -540,7 +541,9 @@ const MESSAGES = {
     }
 };
 
-// Medicine Data
+
+
+Medicine Data
 const medicines = [
     { id: 1, name: "Paracetamol", arabicName: "باراسيتامول", price: "150da", category: "Pain Relief", inStock: true, prescription: false },
     { id: 2, name: "Amoxicillin", arabicName: "أموكسيسيلين", price: "2000da", category: "Antibiotics", inStock: true, prescription: true },
